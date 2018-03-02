@@ -1,8 +1,6 @@
 <template lang="pug">
   nav
-    a.link(@click="goToFirstTab") {{ tabs[0].title }}
-    a.link(@click="goToSecondTab") {{ tabs[1].title }}
-    a.link(@click="goToThirdTab") {{ tabs[2].title }}
+    a.link(v-for="tab in tabs" v-bind:key="tab.id" v-on:click="goToTab(tab.id)") {{ tab.title }}
 </template>
 
 <script>
@@ -17,14 +15,8 @@ export default {
     }
   },
   methods: {
-    goToFirstTab () {
-      router.push('/' + this.tabs[0].id)
-    },
-    goToSecondTab () {
-      router.push('/' + this.tabs[1].id)
-    },
-    goToThirdTab () {
-      router.push('/' + this.tabs[2].id)
+    goToTab (id) {
+      router.push('/' + id)
     }
   }
 }
