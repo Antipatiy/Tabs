@@ -9,6 +9,8 @@ const dummyTable = () => import('../components/dummyTable')
 
 Vue.use(Router)
 
+const getFirstTab = () => sortedTabs()[1] ? sortedTabs()[1].id : sortedTabs()[0].id
+
 export default new Router({
   mode: 'history',
   routes: [
@@ -16,7 +18,7 @@ export default new Router({
       path: '/',
       name: 'startPage',
       component: startPage,
-      redirect: '/' + sortedTabs()[1].id
+      redirect: '/' + getFirstTab()
     },
     {
       path: '/dummyChart',
