@@ -1,4 +1,6 @@
-# backendless
+# Micro-CMS with control via data.json
+
+### You can change the order and availability of pages 
 
 > A Vue.js project
 
